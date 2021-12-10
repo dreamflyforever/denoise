@@ -107,6 +107,10 @@ RNNOISE_EXPORT RNNModel *rnnoise_model_from_file(FILE *f);
  */
 RNNOISE_EXPORT void rnnoise_model_free(RNNModel *model);
 
+#define denoise_init(model) rnnoise_create(model)
+#define denoise_feed(st, buffer, size) rnnoise_process_frame(st, buffer, size)
+#define denosie_deinit(mode) rnnoise_destroy(st)
+
 #ifdef __cplusplus
 }
 #endif
